@@ -11,6 +11,7 @@ app.use(cors({
 }));
 
 app.use(bodyParser.json());
+app.use(express.static(__dirname));
 
 const users = [];
 
@@ -43,5 +44,5 @@ app.post('/api/login', (req, res) => {
 
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Backend is live and running on port ${PORT}`);
+    console.log(`Server is live and running on port ${PORT}`);
 });
