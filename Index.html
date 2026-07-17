@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>Adwin App</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+        button { padding: 15px 30px; font-size: 18px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Adwin App Interface</h1>
+    <button onclick="testConnection()">Connect to Server</button>
+    <p id="status"></p>
+
+    <script>
+        async function testConnection() {
+            const statusText = document.getElementById('status');
+            try {
+                // यह रहा तेरा बैकएंड लिंक
+                const response = await fetch('https://adwin-backend-1.onrender.com/');
+                const data = await response.text();
+                statusText.innerText = "Response: " + data;
+            } catch (error) {
+                statusText.innerText = "Error: Server connection failed.";
+            }
+        }
+    </script>
+</body>
+</html>
