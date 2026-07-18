@@ -10,4 +10,4 @@ jobs:
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only
         env:
-          FLY_API_TOKEN: ${{ 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 }}
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
